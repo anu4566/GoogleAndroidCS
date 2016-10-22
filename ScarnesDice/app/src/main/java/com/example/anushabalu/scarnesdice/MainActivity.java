@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             btnRoll.setEnabled(false);
             btnHold.setEnabled(false);
             int diceValue = random.nextInt(6) + 1;
-            Log.i("Roll Value for computer", String.valueOf(diceValue));
             ivDiceFace.setImageResource(diceFaces[diceValue - 1]);
                if (diceValue != 1) {
                    compTurnScore += diceValue;
@@ -79,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                } else {
                    compTurnScore = 0;
                    labelUpdate();
-                   Log.i("Am exiting", String.valueOf(compTurnScore));
                    handler.removeCallbacksAndMessages(run);
                 }
             compOverallScore += compTurnScore;
@@ -100,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
     protected void rollDice()
     {
         int diceValue = random.nextInt(6) + 1;
-        Log.i("Roll Value",String.valueOf(diceValue));
         ivDiceFace.setImageResource(diceFaces[diceValue-1]);
         if(diceValue != 1)
         {
@@ -145,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(run,500);
         compTurnScore =0;
         labelUpdate();
-        Log.i("After postdelayed",String.valueOf(compTurnScore));
 
     }
     protected void labelUpdate()
